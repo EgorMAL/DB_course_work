@@ -1,0 +1,77 @@
+name: e-club-biome
+volumes:
+  db:
+services:
+  mysql:
+    image: mysql:8.3.0
+    ports:
+      - "3306:3306"
+    env_file:
+      - .env
+    environment:
+    # pass Moscow time zone to mysql
+      TZ: "Europe/Moscow"
+    volumes:
+      - db:/var/lib/mysql
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 3s
+      timeout: 5s
+      retries: 5
+
+  rest-api:
+    build:
+      context: ../rest-api
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3333"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      # pass Moscow time zone to mysql
+      TZ: "Europe/Moscow"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3333/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+  mongo:
+    image: mongo
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-express:
+    image: mongo-express
+    restart: unless-stopped
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_BASICAUTH: false
+
+  node-app:
+    build:
+      context: ../node-app
+      dockerfile: Dockerfile
+    ports:
+      - "8866:8766"
+    depends_on:
+      rest-api:
+        condition: service_healthy
+    env_file:
+      - .env
+    restart: unless-stopped
+    environment:
+      # pass Moscow time zone to mysql
+      TZ: "Europe/Moscow"
