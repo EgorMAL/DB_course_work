@@ -1,0 +1,1579 @@
+2024-04-16T18:54:07.021144+0300 INFO initialized db
+2024-04-16T18:55:22.006669+0300 INFO initialized db
+2024-04-16T18:55:22.200191+0300 INFO initialized db
+2024-04-16T18:58:58.058866+0300 INFO shutting down
+2024-04-16T18:58:59.729428+0300 INFO initialized db
+2024-04-16T18:58:59.967689+0300 INFO initialized db
+2024-04-16T19:02:03.201661+0300 ERROR failed to execute query Textual SQL expression 'SELECT * FROM `users` WHE...' should be explicitly declared as text('SELECT * FROM `users` WHE...')
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/__main__.py", line 7, in <module>
+    uvicorn.run(
+    │       └ <function run at 0x10ed7ab60>
+    └ <module 'uvicorn' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/__init__.py'>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/main.py", line 575, in run
+    server.run()
+    │      └ <function Server.run at 0x10ede0e00>
+    └ <uvicorn.server.Server object at 0x11133b410>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ None
+           │       │   │    └ <function Server.serve at 0x10ede0ea0>
+           │       │   └ <uvicorn.server.Server object at 0x11133b410>
+           │       └ <function run at 0x10ea46200>
+           └ <module 'asyncio' from '/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/async...
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x1113d7300>
+           │      └ <function Runner.run at 0x10eb06520>
+           └ <asyncio.runners.Runner object at 0x1110f0f50>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at /Users/aionixx/development/e-club/g/venv/lib/python3.12/site-pack...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x10eb04040>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x1110f0f50>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x10eafff60>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x10eb05da0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 1985, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x10ea46fc0>
+    └ <Handle Task.task_wakeup(<Future finis... 0x111476ff0>>)>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis... 0x111476ff0>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis... 0x111476ff0>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis... 0x111476ff0>>)>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x11140a150>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 69, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x10ddfe990>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x11140a150>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x111474e00>
+          └ <fastapi.applications.FastAPI object at 0x10ddfe990>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x1113f2980>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x11103a780>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x111474e00>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': 'localhost:3333', 'connection': 'keep-alive', 'content-length': '220', 'sec-ch-ua': '"Google Chrome";v="123"...
+          │    │               │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x1113f2980>
+          │    │               │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x110f58b80>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x11103a780>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x11103a780>>, sen...
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x111474cb0>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x11103a780>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x11103a780>>, sen...
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x111474d10>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x110fbbb90>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x111474cb0>
+          └ <function wrap_app_handling_exceptions at 0x110ea1e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11147c2c0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x110fbbb90>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11147c2c0>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x110fbbb90>>
+          └ <fastapi.routing.APIRouter object at 0x110fbbb90>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11147c2c0>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │     └ <function Route.handle at 0x110ea32e0>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11147c2c0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function request_response.<locals>.app at 0x1113819e0>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11147c2c0>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x111475df0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x11147c4a0>
+          └ <function wrap_app_handling_exceptions at 0x110ea1e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11147c540>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x111476840>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x11147c4a0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x111475df0>
+                     └ <function get_request_handler.<locals>.app at 0x111383ce0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x110ea16c0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'db': <sqlalchemy.orm.session.Session object at 0x111476ff0>, 'data': UserCreate(username='onixx', password='1as2wd3ef', nam...
+                 │         └ <function create_user at 0x1112fea20>
+                 └ <fastapi.dependencies.models.Dependant object at 0x1113e0110>
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/endpoints/other.py", line 401, in create_user
+    result = crud.raw_query(db, sql)
+             │    │         │   └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+             │    │         └ <sqlalchemy.orm.session.Session object at 0x111476ff0>
+             │    └ <function raw_query at 0x1112fda80>
+             └ <module 'app.core.crud' from '/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py'>
+
+> File "/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py", line 61, in raw_query
+    result = db.execute(query)
+             │  │       └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+             │  └ <function Session.execute at 0x110693ec0>
+             └ <sqlalchemy.orm.session.Session object at 0x111476ff0>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2306, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x110693ba0>
+           └ <sqlalchemy.orm.session.Session object at 0x111476ff0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2089, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+                │         │      │     │              └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+                │         │      │     └ <class 'sqlalchemy.sql.roles.StatementRole'>
+                │         │      └ <module 'sqlalchemy.sql.roles' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/rol...
+                │         └ <function expect at 0x10fa389a0>
+                └ <module 'sqlalchemy.sql.coercions' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql...
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 396, in expect
+    resolved = impl._literal_coercion(
+               │    └ <function _CoerceLiterals._literal_coercion at 0x10fa39440>
+               └ <sqlalchemy.sql.coercions.StatementImpl object at 0x10f988380>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           │    │              │        │          └ {}
+           │    │              │        └ None
+           │    │              └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+           │    └ <function _CoerceLiterals._text_coercion at 0x10fa393a0>
+           └ <sqlalchemy.sql.coercions.StatementImpl object at 0x10f988380>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+           │                 │        └ None
+           │                 └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+           └ <function _no_text_coercion at 0x10fa38b80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+          └ <class 'sqlalchemy.exc.ArgumentError'>
+
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT * FROM `users` WHE...' should be explicitly declared as text('SELECT * FROM `users` WHE...')
+2024-04-16T19:03:33.039986+0300 INFO shutting down
+2024-04-16T19:03:35.207999+0300 INFO initialized db
+2024-04-16T19:03:35.437483+0300 INFO initialized db
+2024-04-16T19:03:36.963008+0300 ERROR failed to execute query Textual SQL expression 'SELECT * FROM `users` WHE...' should be explicitly declared as text('SELECT * FROM `users` WHE...')
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/__main__.py", line 7, in <module>
+    uvicorn.run(
+    │       └ <function run at 0x10ef56b60>
+    └ <module 'uvicorn' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/__init__.py'>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/main.py", line 575, in run
+    server.run()
+    │      └ <function Server.run at 0x10efbce00>
+    └ <uvicorn.server.Server object at 0x111559610>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ None
+           │       │   │    └ <function Server.serve at 0x10efbcea0>
+           │       │   └ <uvicorn.server.Server object at 0x111559610>
+           │       └ <function run at 0x10ec22200>
+           └ <module 'asyncio' from '/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/async...
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x11151f140>
+           │      └ <function Runner.run at 0x10ece2520>
+           └ <asyncio.runners.Runner object at 0x1114d8380>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at /Users/aionixx/development/e-club/g/venv/lib/python3.12/site-pack...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x10ece0040>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x1114d8380>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x10ecdbf60>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x10ece1da0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 1985, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x10ec22fc0>
+    └ <Handle Task.task_wakeup(<Future finis... 0x1115b27e0>>)>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis... 0x1115b27e0>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis... 0x1115b27e0>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis... 0x1115b27e0>>)>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x11139c320>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 69, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x10dfda990>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x11139c320>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x1115b0f50>
+          └ <fastapi.applications.FastAPI object at 0x10dfda990>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x1115c02c0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x1115b0ef0>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x1115b0f50>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': 'localhost:3333', 'connection': 'keep-alive', 'content-length': '220', 'sec-ch-ua': '"Google Chrome";v="123"...
+          │    │               │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x1115c02c0>
+          │    │               │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x1111b8b80>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x1115b0ef0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x1115b0ef0>>, sen...
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x1115b0e60>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x1115b0ef0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x1115b0ef0>>, sen...
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x1115b16a0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x11121fc50>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x1115b0e60>
+          └ <function wrap_app_handling_exceptions at 0x111105e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1115c04a0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x11121fc50>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1115c04a0>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x11121fc50>>
+          └ <fastapi.routing.APIRouter object at 0x11121fc50>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1115c04a0>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │     └ <function Route.handle at 0x1111072e0>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1115c04a0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function request_response.<locals>.app at 0x1114fdd00>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1115c04a0>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x1115b1520>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x1115c0540>
+          └ <function wrap_app_handling_exceptions at 0x111105e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1115c0680>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1115b1e80>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x1115c0540>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x1115b1520>
+                     └ <function get_request_handler.<locals>.app at 0x1114fda80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x1111056c0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'db': <sqlalchemy.orm.session.Session object at 0x1115b27e0>, 'data': UserCreate(username='onixx', password='1as2wd3ef', nam...
+                 │         └ <function create_user at 0x111474720>
+                 └ <fastapi.dependencies.models.Dependant object at 0x111517ce0>
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/endpoints/other.py", line 401, in create_user
+    result = crud.raw_query(db, sql)
+             │    │         │   └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+             │    │         └ <sqlalchemy.orm.session.Session object at 0x1115b27e0>
+             │    └ <function raw_query at 0x111445a80>
+             └ <module 'app.core.crud' from '/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py'>
+
+> File "/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py", line 61, in raw_query
+    result = db.execute(query)
+             │  │       └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+             │  └ <function Session.execute at 0x110903ec0>
+             └ <sqlalchemy.orm.session.Session object at 0x1115b27e0>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2306, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x110903ba0>
+           └ <sqlalchemy.orm.session.Session object at 0x1115b27e0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2089, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+                │         │      │     │              └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+                │         │      │     └ <class 'sqlalchemy.sql.roles.StatementRole'>
+                │         │      └ <module 'sqlalchemy.sql.roles' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/rol...
+                │         └ <function expect at 0x10fc189a0>
+                └ <module 'sqlalchemy.sql.coercions' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql...
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 396, in expect
+    resolved = impl._literal_coercion(
+               │    └ <function _CoerceLiterals._literal_coercion at 0x10fc19440>
+               └ <sqlalchemy.sql.coercions.StatementImpl object at 0x10fc12f00>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           │    │              │        │          └ {}
+           │    │              │        └ None
+           │    │              └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+           │    └ <function _CoerceLiterals._text_coercion at 0x10fc193a0>
+           └ <sqlalchemy.sql.coercions.StatementImpl object at 0x10fc12f00>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+           │                 │        └ None
+           │                 └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+           └ <function _no_text_coercion at 0x10fc18b80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+          └ <class 'sqlalchemy.exc.ArgumentError'>
+
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT * FROM `users` WHE...' should be explicitly declared as text('SELECT * FROM `users` WHE...')
+2024-04-16T19:04:03.096078+0300 INFO shutting down
+2024-04-16T19:04:04.834714+0300 INFO initialized db
+2024-04-16T19:04:04.995273+0300 INFO initialized db
+2024-04-16T19:04:07.631435+0300 ERROR failed to execute query Textual SQL expression 'SELECT * FROM `users` WHE...' should be explicitly declared as text('SELECT * FROM `users` WHE...')
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/__main__.py", line 7, in <module>
+    uvicorn.run(
+    │       └ <function run at 0x1105a2b60>
+    └ <module 'uvicorn' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/__init__.py'>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/main.py", line 575, in run
+    server.run()
+    │      └ <function Server.run at 0x110608e00>
+    └ <uvicorn.server.Server object at 0x1127efda0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ None
+           │       │   │    └ <function Server.serve at 0x110608ea0>
+           │       │   └ <uvicorn.server.Server object at 0x1127efda0>
+           │       └ <function run at 0x11026e200>
+           └ <module 'asyncio' from '/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/async...
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x112ae3140>
+           │      └ <function Runner.run at 0x11032e520>
+           └ <asyncio.runners.Runner object at 0x112a83740>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at /Users/aionixx/development/e-club/g/venv/lib/python3.12/site-pack...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x11032c040>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x112a83740>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x110327f60>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x11032dda0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 1985, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x11026efc0>
+    └ <Handle Task.task_wakeup(<Future finis... 0x112b7a330>>)>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis... 0x112b7a330>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis... 0x112b7a330>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis... 0x112b7a330>>)>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x1128d9b50>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 69, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x10f70f590>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x1128d9b50>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x112b789e0>
+          └ <fastapi.applications.FastAPI object at 0x10f70f590>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x112b84180>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x112b78a40>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x112b789e0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': 'localhost:3333', 'connection': 'keep-alive', 'content-length': '220', 'sec-ch-ua': '"Google Chrome";v="123"...
+          │    │               │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x112b84180>
+          │    │               │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x11278cb80>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x112b78a40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x112b78a40>>, sen...
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x112b78a10>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x112b78a40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x112b78a40>>, sen...
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x112b79160>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x1121c5e20>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x112b78a10>
+          └ <function wrap_app_handling_exceptions at 0x1126dde40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x112b844a0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x1121c5e20>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x112b844a0>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x1121c5e20>>
+          └ <fastapi.routing.APIRouter object at 0x1121c5e20>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x112b844a0>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │     └ <function Route.handle at 0x1126df2e0>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x112b844a0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function request_response.<locals>.app at 0x112ac1d00>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x112b844a0>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x112b79640>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x112b84540>
+          └ <function wrap_app_handling_exceptions at 0x1126dde40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x112b84680>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x112b79b20>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x112b84540>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x112b79640>
+                     └ <function get_request_handler.<locals>.app at 0x112ac1a80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x1126dd6c0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'db': <sqlalchemy.orm.session.Session object at 0x112b7a330>, 'data': UserCreate(username='onixx', password='1as2wd3ef', nam...
+                 │         └ <function create_user at 0x112a3c720>
+                 └ <fastapi.dependencies.models.Dependant object at 0x112adba40>
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/endpoints/other.py", line 401, in create_user
+    result = crud.raw_query(db, sql)
+             │    │         │   └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+             │    │         └ <sqlalchemy.orm.session.Session object at 0x112b7a330>
+             │    └ <function raw_query at 0x112a0da80>
+             └ <module 'app.core.crud' from '/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py'>
+
+> File "/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py", line 61, in raw_query
+    result = db.execute(query)
+             │  │       └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+             │  └ <function Session.execute at 0x111ed7ec0>
+             └ <sqlalchemy.orm.session.Session object at 0x112b7a330>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2306, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x111ed7ba0>
+           └ <sqlalchemy.orm.session.Session object at 0x112b7a330>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2089, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+                │         │      │     │              └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+                │         │      │     └ <class 'sqlalchemy.sql.roles.StatementRole'>
+                │         │      └ <module 'sqlalchemy.sql.roles' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/rol...
+                │         └ <function expect at 0x1116f09a0>
+                └ <module 'sqlalchemy.sql.coercions' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql...
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 396, in expect
+    resolved = impl._literal_coercion(
+               │    └ <function _CoerceLiterals._literal_coercion at 0x1116f1440>
+               └ <sqlalchemy.sql.coercions.StatementImpl object at 0x1111be800>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           │    │              │        │          └ {}
+           │    │              │        └ None
+           │    │              └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+           │    └ <function _CoerceLiterals._text_coercion at 0x1116f13a0>
+           └ <sqlalchemy.sql.coercions.StatementImpl object at 0x1111be800>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+           │                 │        └ None
+           │                 └ "SELECT * FROM `users` WHERE `username`='onixx' OR `phone`='+79991234323'"
+           └ <function _no_text_coercion at 0x1116f0b80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+          └ <class 'sqlalchemy.exc.ArgumentError'>
+
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT * FROM `users` WHE...' should be explicitly declared as text('SELECT * FROM `users` WHE...')
+2024-04-16T19:06:50.257241+0300 INFO shutting down
+2024-04-16T19:06:52.436175+0300 INFO initialized db
+2024-04-16T19:06:52.627439+0300 INFO initialized db
+2024-04-16T19:08:08.074966+0300 INFO shutting down
+2024-04-16T19:08:09.898891+0300 INFO initialized db
+2024-04-16T19:08:10.088704+0300 INFO initialized db
+2024-04-16T19:08:14.839784+0300 DEBUG result: <sqlalchemy.engine.cursor.CursorResult object at 0x10633ed60>
+2024-04-16T19:10:08.590159+0300 INFO shutting down
+2024-04-16T19:10:10.618437+0300 INFO initialized db
+2024-04-16T19:10:10.799500+0300 INFO initialized db
+2024-04-16T19:10:14.211302+0300 DEBUG result: []
+2024-04-16T19:11:13.057622+0300 INFO shutting down
+2024-04-16T19:11:14.701446+0300 INFO initialized db
+2024-04-16T19:11:14.890866+0300 INFO initialized db
+2024-04-16T19:11:16.890159+0300 DEBUG result: []
+2024-04-16T19:11:16.914006+0300 ERROR failed to execute query This result object does not return rows. It has been closed automatically.
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/__main__.py", line 7, in <module>
+    uvicorn.run(
+    │       └ <function run at 0x101a3eb60>
+    └ <module 'uvicorn' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/__init__.py'>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/main.py", line 575, in run
+    server.run()
+    │      └ <function Server.run at 0x101aa4e00>
+    └ <uvicorn.server.Server object at 0x103fb23c0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ None
+           │       │   │    └ <function Server.serve at 0x101aa4ea0>
+           │       │   └ <uvicorn.server.Server object at 0x103fb23c0>
+           │       └ <function run at 0x10170a200>
+           └ <module 'asyncio' from '/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/async...
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x103f7f220>
+           │      └ <function Runner.run at 0x1017ca520>
+           └ <asyncio.runners.Runner object at 0x103f64f50>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at /Users/aionixx/development/e-club/g/venv/lib/python3.12/site-pack...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x1017c8040>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x103f64f50>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x1017c3f60>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x1017c9da0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 1985, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x10170afc0>
+    └ <Handle Task.task_wakeup(<Future finis... 0x1040166f0>>)>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis... 0x1040166f0>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis... 0x1040166f0>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis... 0x1040166f0>>)>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x103fb00e0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 69, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x100ac2990>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x103fb00e0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x104014ce0>
+          └ <fastapi.applications.FastAPI object at 0x100ac2990>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x104020220>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x104014d10>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x104014ce0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': 'localhost:3333', 'connection': 'keep-alive', 'content-length': '220', 'sec-ch-ua': '"Google Chrome";v="123"...
+          │    │               │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x104020220>
+          │    │               │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x103c1cb80>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x104014d10>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x104014d10>>, sen...
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x104014c80>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x104014d10>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x104014d10>>, sen...
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x1040154c0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x102183c20>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x104014c80>
+          └ <function wrap_app_handling_exceptions at 0x103b65e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x104020400>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x102183c20>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x104020400>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x102183c20>>
+          └ <fastapi.routing.APIRouter object at 0x102183c20>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x104020400>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │     └ <function Route.handle at 0x103b672e0>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x104020400>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function request_response.<locals>.app at 0x103f2da80>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x104020400>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x104015940>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x1040204a0>
+          └ <function wrap_app_handling_exceptions at 0x103b65e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1040205e0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x104015df0>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x1040204a0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x104015940>
+                     └ <function get_request_handler.<locals>.app at 0x103f2fd80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x103b656c0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'db': <sqlalchemy.orm.session.Session object at 0x1040166f0>, 'data': UserCreate(username='onixx', password='1as2wd3ef', nam...
+                 │         └ <function create_user at 0x103ea2ac0>
+                 └ <fastapi.dependencies.models.Dependant object at 0x103f88320>
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/endpoints/other.py", line 411, in create_user
+    crud.raw_query(db, sql)
+    │    │         │   └ "INSERT INTO `users`(`username`, `password_hash`, `name`, `surname`, `usergroup_id`, `avatar_id`, `email`, `phone`, `country`...
+    │    │         └ <sqlalchemy.orm.session.Session object at 0x1040166f0>
+    │    └ <function raw_query at 0x103ea1b20>
+    └ <module 'app.core.crud' from '/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py'>
+
+> File "/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py", line 62, in raw_query
+    result = db.execute(text(query)).mappings().all()
+             │  │       │    └ "INSERT INTO `users`(`username`, `password_hash`, `name`, `surname`, `usergroup_id`, `avatar_id`, `email`, `phone`, `country`...
+             │  │       └ <function text at 0x102f95f80>
+             │  └ <function Session.execute at 0x103357ec0>
+             └ <sqlalchemy.orm.session.Session object at 0x1040166f0>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 2074, in all
+    return self._allrows()
+           │    └ <function ResultInternal._allrows at 0x1030800e0>
+           └ <sqlalchemy.engine.result.MappingResult object at 0x10419de50>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 546, in _allrows
+    make_row = self._row_getter
+               │    └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x10305a0c0>
+               └ <sqlalchemy.engine.result.MappingResult object at 0x10419de50>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+    │   │        │    │                    │    │    └ <sqlalchemy.engine.result.MappingResult object at 0x10419de50>
+    │   │        │    │                    │    └ <function ResultInternal._row_getter at 0x10303fec0>
+    │   │        │    │                    └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x10305a0c0>
+    │   │        │    └ '_row_getter'
+    │   │        └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x10305a0c0>
+    │   └ <attribute '__dict__' of 'FilterResult' objects>
+    └ <sqlalchemy.engine.result.MappingResult object at 0x10419de50>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 471, in _row_getter
+    key_to_index = metadata._key_to_index
+                   │        └ <property object at 0x10305e570>
+                   └ <sqlalchemy.engine.cursor._NoResultMetaData object at 0x102fd5ea0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1358, in _key_to_index
+    self._we_dont_return_rows()
+    │    └ <function _NoResultMetaData._we_dont_return_rows at 0x103087740>
+    └ <sqlalchemy.engine.cursor._NoResultMetaData object at 0x102fd5ea0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1338, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+          │   └ <class 'sqlalchemy.exc.ResourceClosedError'>
+          └ <module 'sqlalchemy.exc' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/exc.py'>
+
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+2024-04-16T19:17:03.365290+0300 INFO shutting down
+2024-04-16T19:17:05.627088+0300 INFO initialized db
+2024-04-16T19:17:05.821230+0300 INFO initialized db
+2024-04-16T19:17:10.365835+0300 DEBUG result: []
+2024-04-16T19:17:10.370036+0300 ERROR failed parse results This result object does not return rows. It has been closed automatically.
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/__main__.py", line 7, in <module>
+    uvicorn.run(
+    │       └ <function run at 0x10132ab60>
+    └ <module 'uvicorn' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/__init__.py'>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/main.py", line 575, in run
+    server.run()
+    │      └ <function Server.run at 0x101390e00>
+    └ <uvicorn.server.Server object at 0x102f4fb60>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ None
+           │       │   │    └ <function Server.serve at 0x101390ea0>
+           │       │   └ <uvicorn.server.Server object at 0x102f4fb60>
+           │       └ <function run at 0x100ff6200>
+           └ <module 'asyncio' from '/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/async...
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x103867060>
+           │      └ <function Runner.run at 0x1010b6520>
+           └ <asyncio.runners.Runner object at 0x103663590>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at /Users/aionixx/development/e-club/g/venv/lib/python3.12/site-pack...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x1010b4040>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x103663590>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x1010aff60>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x1010b5da0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 1985, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x100ff6fc0>
+    └ <Handle Task.task_wakeup(<Future finis... 0x1038fa8a0>>)>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis... 0x1038fa8a0>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis... 0x1038fa8a0>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis... 0x1038fa8a0>>)>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x1037e90a0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 69, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x100497590>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x1037e90a0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x1038f9010>
+          └ <fastapi.applications.FastAPI object at 0x100497590>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x10390c2c0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x1038f8fe0>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x1038f9010>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': 'localhost:3333', 'connection': 'keep-alive', 'content-length': '220', 'sec-ch-ua': '"Google Chrome";v="123"...
+          │    │               │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x10390c2c0>
+          │    │               │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x103514b80>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x1038f8fe0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x1038f8fe0>>, sen...
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x1038f9040>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x1038f8fe0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x1038f8fe0>>, sen...
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x1038f9610>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x101878b60>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x1038f9040>
+          └ <function wrap_app_handling_exceptions at 0x103465e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10390c4a0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x101878b60>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10390c4a0>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x101878b60>>
+          └ <fastapi.routing.APIRouter object at 0x101878b60>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10390c4a0>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │     └ <function Route.handle at 0x1034672e0>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10390c4a0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function request_response.<locals>.app at 0x103845d00>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10390c4a0>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x1038f9c10>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x10390c540>
+          └ <function wrap_app_handling_exceptions at 0x103465e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10390c680>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1038fa090>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x10390c540>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x1038f9c10>
+                     └ <function get_request_handler.<locals>.app at 0x103845a80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x1034656c0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'db': <sqlalchemy.orm.session.Session object at 0x1038fa8a0>, 'data': UserCreate(username='onixx', password='1as2wd3ef', nam...
+                 │         └ <function create_user at 0x1037c0720>
+                 └ <fastapi.dependencies.models.Dependant object at 0x10385bef0>
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/endpoints/other.py", line 411, in create_user
+    crud.raw_query(db, sql)
+    │    │         │   └ "INSERT INTO `users`(`username`, `password_hash`, `name`, `surname`, `usergroup_id`, `avatar_id`, `email`, `phone`, `country`...
+    │    │         └ <sqlalchemy.orm.session.Session object at 0x1038fa8a0>
+    │    └ <function raw_query at 0x103791a80>
+    └ <module 'app.core.crud' from '/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py'>
+
+> File "/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py", line 64, in raw_query
+    result = result.mappings().all()
+             │      └ <function Result.mappings at 0x1029896c0>
+             └ <sqlalchemy.engine.cursor.CursorResult object at 0x103a6af20>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 2074, in all
+    return self._allrows()
+           │    └ <function ResultInternal._allrows at 0x1029880e0>
+           └ <sqlalchemy.engine.result.MappingResult object at 0x103a7db30>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 546, in _allrows
+    make_row = self._row_getter
+               │    └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x102962390>
+               └ <sqlalchemy.engine.result.MappingResult object at 0x103a7db30>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+    │   │        │    │                    │    │    └ <sqlalchemy.engine.result.MappingResult object at 0x103a7db30>
+    │   │        │    │                    │    └ <function ResultInternal._row_getter at 0x102943ec0>
+    │   │        │    │                    └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x102962390>
+    │   │        │    └ '_row_getter'
+    │   │        └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x102962390>
+    │   └ <attribute '__dict__' of 'FilterResult' objects>
+    └ <sqlalchemy.engine.result.MappingResult object at 0x103a7db30>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 471, in _row_getter
+    key_to_index = metadata._key_to_index
+                   │        └ <property object at 0x1029666b0>
+                   └ <sqlalchemy.engine.cursor._NoResultMetaData object at 0x1028e1ea0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1358, in _key_to_index
+    self._we_dont_return_rows()
+    │    └ <function _NoResultMetaData._we_dont_return_rows at 0x10298f740>
+    └ <sqlalchemy.engine.cursor._NoResultMetaData object at 0x1028e1ea0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1338, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+          │   └ <class 'sqlalchemy.exc.ResourceClosedError'>
+          └ <module 'sqlalchemy.exc' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/exc.py'>
+
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+2024-04-16T19:17:49.663947+0300 INFO shutting down
+2024-04-16T19:17:51.455383+0300 INFO initialized db
+2024-04-16T19:17:51.670157+0300 INFO initialized db
+2024-04-16T19:18:00.466943+0300 DEBUG result: <sqlalchemy.engine.cursor.CursorResult object at 0x10d952e40>
+2024-04-16T19:18:00.467264+0300 DEBUG result: []
+2024-04-16T19:18:00.469117+0300 DEBUG result: <sqlalchemy.engine.cursor.CursorResult object at 0x10d952f20>
+2024-04-16T19:18:00.469494+0300 ERROR failed parse results This result object does not return rows. It has been closed automatically.
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/__main__.py", line 7, in <module>
+    uvicorn.run(
+    │       └ <function run at 0x10b20ab60>
+    └ <module 'uvicorn' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/__init__.py'>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/main.py", line 575, in run
+    server.run()
+    │      └ <function Server.run at 0x10b270e00>
+    └ <uvicorn.server.Server object at 0x10d77bda0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ None
+           │       │   │    └ <function Server.serve at 0x10b270ea0>
+           │       │   └ <uvicorn.server.Server object at 0x10d77bda0>
+           │       └ <function run at 0x10aed6200>
+           └ <module 'asyncio' from '/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/async...
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x10d747140>
+           │      └ <function Runner.run at 0x10af96520>
+           └ <asyncio.runners.Runner object at 0x10d583b60>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at /Users/aionixx/development/e-club/g/venv/lib/python3.12/site-pack...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x10af94040>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x10d583b60>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x10af8ff60>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x10af95da0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 1985, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x10aed6fc0>
+    └ <Handle Task.task_wakeup(<Future finis... 0x10d7da330>>)>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis... 0x10d7da330>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis... 0x10d7da330>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis... 0x10d7da330>>)>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x10d4f8320>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 69, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x10ccf5370>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x10d4f8320>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d7d90d0>
+          └ <fastapi.applications.FastAPI object at 0x10ccf5370>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x10d7f0180>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x10d7d8fe0>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d7d90d0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': 'localhost:3333', 'connection': 'keep-alive', 'content-length': '220', 'sec-ch-ua': '"Google Chrome";v="123"...
+          │    │               │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x10d7f0180>
+          │    │               │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x10d3e8b80>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x10d7d8fe0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x10d7d8fe0>>, sen...
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d7d9040>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x10d7d8fe0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x10d7d8fe0>>, sen...
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x10d7d9bb0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x10d35b9e0>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d7d9040>
+          └ <function wrap_app_handling_exceptions at 0x10d335e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10d7f04a0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x10d35b9e0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10d7f04a0>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x10d35b9e0>>
+          └ <fastapi.routing.APIRouter object at 0x10d35b9e0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10d7f04a0>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │     └ <function Route.handle at 0x10d3372e0>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10d7f04a0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function request_response.<locals>.app at 0x10d725d00>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10d7f04a0>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x10d73cce0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x10d7f0540>
+          └ <function wrap_app_handling_exceptions at 0x10d335e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10d7f0680>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x10d7da0f0>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x10d7f0540>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x10d73cce0>
+                     └ <function get_request_handler.<locals>.app at 0x10d725a80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x10d3356c0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'db': <sqlalchemy.orm.session.Session object at 0x10d7da330>, 'data': UserCreate(username='onixx', password='1as2wd3ef', nam...
+                 │         └ <function create_user at 0x10d69c720>
+                 └ <fastapi.dependencies.models.Dependant object at 0x10d73fec0>
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/endpoints/other.py", line 411, in create_user
+    crud.raw_query(db, sql)
+    │    │         │   └ "INSERT INTO `users`(`username`, `password_hash`, `name`, `surname`, `usergroup_id`, `avatar_id`, `email`, `phone`, `country`...
+    │    │         └ <sqlalchemy.orm.session.Session object at 0x10d7da330>
+    │    └ <function raw_query at 0x10d66da80>
+    └ <module 'app.core.crud' from '/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py'>
+
+> File "/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py", line 65, in raw_query
+    result = result.mappings().all()
+             │      └ <function Result.mappings at 0x10c84d6c0>
+             └ <sqlalchemy.engine.cursor.CursorResult object at 0x10d952f20>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 2074, in all
+    return self._allrows()
+           │    └ <function ResultInternal._allrows at 0x10c84c0e0>
+           └ <sqlalchemy.engine.result.MappingResult object at 0x10d965b80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 546, in _allrows
+    make_row = self._row_getter
+               │    └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x10c826210>
+               └ <sqlalchemy.engine.result.MappingResult object at 0x10d965b80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+    │   │        │    │                    │    │    └ <sqlalchemy.engine.result.MappingResult object at 0x10d965b80>
+    │   │        │    │                    │    └ <function ResultInternal._row_getter at 0x10c807ec0>
+    │   │        │    │                    └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x10c826210>
+    │   │        │    └ '_row_getter'
+    │   │        └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x10c826210>
+    │   └ <attribute '__dict__' of 'FilterResult' objects>
+    └ <sqlalchemy.engine.result.MappingResult object at 0x10d965b80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 471, in _row_getter
+    key_to_index = metadata._key_to_index
+                   │        └ <property object at 0x10c82a570>
+                   └ <sqlalchemy.engine.cursor._NoResultMetaData object at 0x10c7a1ea0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1358, in _key_to_index
+    self._we_dont_return_rows()
+    │    └ <function _NoResultMetaData._we_dont_return_rows at 0x10c853740>
+    └ <sqlalchemy.engine.cursor._NoResultMetaData object at 0x10c7a1ea0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1338, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+          │   └ <class 'sqlalchemy.exc.ResourceClosedError'>
+          └ <module 'sqlalchemy.exc' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/exc.py'>
+
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+2024-04-16T19:18:58.348605+0300 INFO shutting down
+2024-04-16T19:19:00.065649+0300 INFO initialized db
+2024-04-16T19:19:00.265098+0300 INFO initialized db
+2024-04-16T19:19:03.380501+0300 DEBUG result: <sqlalchemy.engine.cursor.CursorResult object at 0x1110bae40>
+2024-04-16T19:19:03.380932+0300 DEBUG result: []
+2024-04-16T19:19:16.072080+0300 INFO shutting down
+2024-04-16T19:19:17.614055+0300 INFO initialized db
+2024-04-16T19:19:17.898505+0300 INFO initialized db
+2024-04-16T19:19:20.265395+0300 DEBUG result: <sqlalchemy.engine.cursor.CursorResult object at 0x10561ee40>
+2024-04-16T19:19:20.265746+0300 DEBUG result: []
+2024-04-16T19:19:20.268516+0300 DEBUG result: <sqlalchemy.engine.cursor.CursorResult object at 0x10561ef20>
+2024-04-16T19:19:20.268800+0300 ERROR failed parse results This result object does not return rows. It has been closed automatically.
+Traceback (most recent call last):
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/__main__.py", line 7, in <module>
+    uvicorn.run(
+    │       └ <function run at 0x102edeb60>
+    └ <module 'uvicorn' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/__init__.py'>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/main.py", line 575, in run
+    server.run()
+    │      └ <function Server.run at 0x102f44e00>
+    └ <uvicorn.server.Server object at 0x1053bbc20>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ None
+           │       │   │    └ <function Server.serve at 0x102f44ea0>
+           │       │   └ <uvicorn.server.Server object at 0x1053bbc20>
+           │       └ <function run at 0x102baa200>
+           └ <module 'asyncio' from '/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/async...
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x10541b140>
+           │      └ <function Runner.run at 0x102c6a520>
+           └ <asyncio.runners.Runner object at 0x104ad80e0>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at /Users/aionixx/development/e-club/g/venv/lib/python3.12/site-pack...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x102c68040>
+           │    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x104ad80e0>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 672, in run_until_complete
+    self.run_forever()
+    │    └ <function BaseEventLoop.run_forever at 0x102c63f60>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 639, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x102c69da0>
+    └ <_UnixSelectorEventLoop running=True closed=False debug=False>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 1985, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x102baafc0>
+    └ <Handle Task.task_wakeup(<Future finis... 0x1054ae210>>)>
+
+  File "/usr/local/Cellar/python@3.12/3.12.2_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finis... 0x1054ae210>>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finis... 0x1054ae210>>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finis... 0x1054ae210>>)>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 407, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x105367230>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 69, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x10204b590>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x105367230>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x1054acf50>
+          └ <fastapi.applications.FastAPI object at 0x10204b590>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x1054c02c0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.cors.CORSMiddleware object at 0x1054acef0>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x1054acf50>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+          │    │               │      │        │                     └ Headers({'host': 'localhost:3333', 'connection': 'keep-alive', 'content-length': '220', 'sec-ch-ua': '"Google Chrome";v="123"...
+          │    │               │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x1054c02c0>
+          │    │               │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │    │               └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function CORSMiddleware.simple_response at 0x1050c8b80>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x1054acef0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/cors.py", line 148, in simple_response
+    await self.app(scope, receive, send)
+          │    │   │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x1054acef0>>, sen...
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x1054ace60>
+          └ <starlette.middleware.cors.CORSMiddleware object at 0x1054acef0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ functools.partial(<bound method CORSMiddleware.send of <starlette.middleware.cors.CORSMiddleware object at 0x1054acef0>>, sen...
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x1054ad6d0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x10501caa0>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x1054ace60>
+          └ <function wrap_app_handling_exceptions at 0x105019e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1054c04a0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x10501caa0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1054c04a0>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x10501caa0>>
+          └ <fastapi.routing.APIRouter object at 0x10501caa0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1054c04a0>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │     └ <function Route.handle at 0x10501b2e0>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1054c04a0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │    └ <function request_response.<locals>.app at 0x1053f9d00>
+          └ APIRoute(path='/api/api/users/create', name='create_user', methods=['POST'])
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1054c04a0>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x1054ada00>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x1054c0540>
+          └ <function wrap_app_handling_exceptions at 0x105019e40>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x1054c0680>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.h11_impl.RequestResponseCycle object at 0x1054adeb0>>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 3333), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x1054c0540>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x1054ada00>
+                     └ <function get_request_handler.<locals>.app at 0x1053f9a80>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x1050196c0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'db': <sqlalchemy.orm.session.Session object at 0x1054ae210>, 'data': UserCreate(username='onixx', password='1as2wd3ef', nam...
+                 │         └ <function create_user at 0x105374720>
+                 └ <fastapi.dependencies.models.Dependant object at 0x105413e30>
+
+  File "/Users/aionixx/development/e-club/g/rest-api/app/endpoints/other.py", line 411, in create_user
+    crud.raw_query(db, sql)
+    │    │         │   └ "INSERT INTO `users`(`username`, `password_hash`, `name`, `surname`, `usergroup_id`, `avatar_id`, `email`, `phone`, `country`...
+    │    │         └ <sqlalchemy.orm.session.Session object at 0x1054ae210>
+    │    └ <function raw_query at 0x105345a80>
+    └ <module 'app.core.crud' from '/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py'>
+
+> File "/Users/aionixx/development/e-club/g/rest-api/app/core/crud.py", line 65, in raw_query
+    result = result.mappings().all()
+             │      └ <function Result.mappings at 0x10453d6c0>
+             └ <sqlalchemy.engine.cursor.CursorResult object at 0x10561ef20>
+
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 2074, in all
+    return self._allrows()
+           │    └ <function ResultInternal._allrows at 0x10453c0e0>
+           └ <sqlalchemy.engine.result.MappingResult object at 0x105631bd0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 546, in _allrows
+    make_row = self._row_getter
+               │    └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x104516180>
+               └ <sqlalchemy.engine.result.MappingResult object at 0x105631bd0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 1253, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+    │   │        │    │                    │    │    └ <sqlalchemy.engine.result.MappingResult object at 0x105631bd0>
+    │   │        │    │                    │    └ <function ResultInternal._row_getter at 0x1044f7ec0>
+    │   │        │    │                    └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x104516180>
+    │   │        │    └ '_row_getter'
+    │   │        └ <sqlalchemy.util.langhelpers.HasMemoized.memoized_attribute object at 0x104516180>
+    │   └ <attribute '__dict__' of 'FilterResult' objects>
+    └ <sqlalchemy.engine.result.MappingResult object at 0x105631bd0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/result.py", line 471, in _row_getter
+    key_to_index = metadata._key_to_index
+                   │        └ <property object at 0x10451a570>
+                   └ <sqlalchemy.engine.cursor._NoResultMetaData object at 0x104495ea0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1358, in _key_to_index
+    self._we_dont_return_rows()
+    │    └ <function _NoResultMetaData._we_dont_return_rows at 0x104543740>
+    └ <sqlalchemy.engine.cursor._NoResultMetaData object at 0x104495ea0>
+  File "/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/engine/cursor.py", line 1338, in _we_dont_return_rows
+    raise exc.ResourceClosedError(
+          │   └ <class 'sqlalchemy.exc.ResourceClosedError'>
+          └ <module 'sqlalchemy.exc' from '/Users/aionixx/development/e-club/g/venv/lib/python3.12/site-packages/sqlalchemy/exc.py'>
+
+sqlalchemy.exc.ResourceClosedError: This result object does not return rows. It has been closed automatically.
+2024-04-16T19:21:15.286490+0300 INFO shutting down
+2024-04-16T19:21:17.119323+0300 INFO initialized db
+2024-04-16T19:21:17.321247+0300 INFO initialized db
+2024-04-16T19:22:32.640082+0300 INFO shutting down
+2024-04-16T19:22:34.661897+0300 INFO initialized db
+2024-04-16T19:22:34.856799+0300 INFO initialized db
+2024-04-16T19:22:42.119758+0300 DEBUG result: []
+2024-04-16T19:23:32.475429+0300 DEBUG result: [{'user_id': 4, 'username': 'cheshrst', 'password_hash': '6ba972408907d98a70e7dbfee854f55e', 'name': '', 'surname': '', 'usergroup_id': 1, 'avatar_id': 0, 'email': '', 'phone': '+79996739788', 'country': '', 'city': '', 'address': '', 'calculation_method': 1}, {'user_id': 17, 'username': 'user', 'password_hash': 'password', 'name': 'name', 'surname': 'surname', 'usergroup_id': 1, 'avatar_id': 0, 'email': 'email@email.ru', 'phone': '+79996739788', 'country': 'country', 'city': 'city', 'address': 'address', 'calculation_method': 1}]
+2024-04-16T19:25:44.210372+0300 INFO shutting down
+2024-04-16T19:26:06.529290+0300 INFO initialized db
+2024-04-16T19:26:06.719580+0300 INFO initialized db
+2024-04-16T19:26:12.641457+0300 DEBUG result: []
+2024-04-16T19:33:06.560434+0300 INFO shutting down
+2024-04-16T19:33:08.999427+0300 INFO initialized db
+2024-04-16T19:33:09.196189+0300 INFO initialized db
+2024-04-16T19:33:12.991636+0300 INFO Verifying password 1as2wd3ef against $2b$12$p3NxteudTQXJWUU3NW1CPOBwnL2tRaekONdCUq5cw77Eb4Knshhea
+2024-04-16T19:33:25.062705+0300 INFO Verifying password 1as2wd3es against $2b$12$p3NxteudTQXJWUU3NW1CPOBwnL2tRaekONdCUq5cw77Eb4Knshhea
+2024-04-16T19:33:25.327462+0300 ERROR Incorrect username or password
+2024-04-16T19:34:05.076877+0300 INFO Verifying password 1as2wd3ef against $2b$12$p3NxteudTQXJWUU3NW1CPOBwnL2tRaekONdCUq5cw77Eb4Knshhea
+2024-04-16T19:36:33.983181+0300 INFO shutting down
+2024-04-16T19:36:35.651380+0300 INFO initialized db
+2024-04-16T19:36:35.834981+0300 INFO initialized db
+2024-04-16T19:36:43.369551+0300 INFO Verifying password 1as2wd3ef against $2b$12$p3NxteudTQXJWUU3NW1CPOBwnL2tRaekONdCUq5cw77Eb4Knshhea
+2024-04-16T19:36:49.744786+0300 INFO Getting current admin from token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9uaXh4IiwiZXhwIjoxNzEzODkwMjAzfQ.TISHgahahdWpIii33A-q4lwbUf_DyE0opcLS-yf-h10
+2024-04-16T19:36:49.745285+0300 INFO {'username': 'onixx', 'exp': 1713890203}
+2024-04-16T19:40:31.587861+0300 INFO shutting down
+2024-04-16T19:40:33.962339+0300 INFO initialized db
+2024-04-16T19:40:34.157773+0300 INFO initialized db
+2024-04-16T19:40:36.363416+0300 INFO Verifying password 1as2wd3ef against $2b$12$p3NxteudTQXJWUU3NW1CPOBwnL2tRaekONdCUq5cw77Eb4Knshhea
+2024-04-16T19:40:39.683276+0300 INFO Getting current admin from token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9uaXh4X2FkbSIsImV4cCI6MTcxMzg5MDQzNn0.DEsI7GFj1EOWtIifCKe6xqWwJCpuWwLBN_T0Paec_1Q
+2024-04-16T19:40:39.684061+0300 INFO {'username': 'onixx_adm', 'exp': 1713890436}
+2024-04-16T19:40:39.720903+0300 DEBUG result: [{'user_id': 1, 'username': 'Liberty', 'password_hash': '109889f941630d269546335f728f3558', 'name': 'Никита', 'surname': '', 'usergroup_id': 1, 'avatar_id': 0, 'email': 'uoker000@gmail.com', 'phone': '+79773746082', 'country': 'Russia', 'city': 'Moscow', 'address': '', 'calculation_method': 2}, {'user_id': 2, 'username': 'Xist3ns', 'password_hash': '109889f941630d269546335f728f3558', 'name': 'Никита', 'surname': '', 'usergroup_id': 1, 'avatar_id': 0, 'email': 'uoker001@gmail.com', 'phone': '+79773746081', 'country': 'Russia', 'city': 'Moscow', 'address': '', 'calculation_method': 1}, {'user_id': 3, 'username': 'root', 'password_hash': 'd41d8cd98f00b204e9800998ecf8427e', 'name': '', 'surname': '', 'usergroup_id': 1, 'avatar_id': 0, 'email': '', 'phone': '+79773746080', 'country': '', 'city': '', 'address': '', 'calculation_method': 1}, {'user_id': 4, 'username': 'cheshrst', 'password_hash': '6ba972408907d98a70e7dbfee854f55e', 'name': '', 'surname': '', 'usergroup_id': 1, 'avatar_id': 0, 'email': '', 'phone': '+79996739788', 'country': '', 'city': '', 'address': '', 'calculation_method': 1}, {'user_id': 17, 'username': 'user', 'password_hash': 'password', 'name': 'name', 'surname': 'surname', 'usergroup_id': 1, 'avatar_id': 0, 'email': 'email@email.ru', 'phone': '+79996739788', 'country': 'country', 'city': 'city', 'address': 'address', 'calculation_method': 1}, {'user_id': 19, 'username': 'Retr0', 'password_hash': '109889f941630d269546335f728f3558', 'name': 'Никита', 'surname': 'Админ', 'usergroup_id': 1, 'avatar_id': 0, 'email': 'email@mail.ru', 'phone': '89773746089', 'country': 'Россия', 'city': 'Москва', 'address': 'Перовская 56/55', 'calculation_method': 1}, {'user_id': 20, 'username': 'player123', 'password_hash': '4297f44b13955235245b2497399d7a93', 'name': 'Проверка', 'surname': 'Создания', 'usergroup_id': 1, 'avatar_id': 0, 'email': 'mailertest@mail.ru', 'phone': '89773746082', 'country': 'Russia', 'city': 'Moscow', 'address': '1-й проезд д.1', 'calculation_method': 1}, {'user_id': 21, 'username': 'player1234', 'password_hash': '4297f44b13955235245b2497399d7a93', 'name': 'Проверка2', 'surname': 'Создания2', 'usergroup_id': 1, 'avatar_id': 0, 'email': 'mailertest@mail.ru', 'phone': '89773746086', 'country': 'Russia', 'city': 'Saint Petersburg', 'address': '2-й проезд д.2', 'calculation_method': 1}, {'user_id': 27, 'username': 'onixx', 'password_hash': '$2b$12$p3NxteudTQXJWUU3NW1CPOBwnL2tRaekONdCUq5cw77Eb4Knshhea', 'name': 'oleg', 'surname': 'olegovich', 'usergroup_id': 1, 'avatar_id': 0, 'email': 's.olegys0801@gmail.com', 'phone': '+79991234323', 'country': 'Rus', 'city': 'Moscow', 'address': 'Jopa', 'calculation_method': 1}]
+2024-04-16T20:08:05.418864+0300 INFO shutting down
+2024-04-16T20:09:32.017194+0300 INFO initialized db
+2024-04-16T20:09:32.238428+0300 INFO initialized db
+2024-04-16T20:09:35.303215+0300 INFO Getting current admin from token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9uaXh4X2FkbSIsImV4cCI6MTcxMzg5MDQzNn0.DEsI7GFj1EOWtIifCKe6xqWwJCpuWwLBN_T0Paec_1Q
+2024-04-16T20:09:35.303845+0300 INFO {'username': 'onixx_adm', 'exp': 1713890436}
+2024-04-16T20:09:35.338376+0300 DEBUG result: [[1, 'Liberty', '109889f941630d269546335f728f3558', 'Никита', '', 1, 0, 'uoker000@gmail.com', '+79773746082', 'Russia', 'Moscow', '', 2], [2, 'Xist3ns', '109889f941630d269546335f728f3558', 'Никита', '', 1, 0, 'uoker001@gmail.com', '+79773746081', 'Russia', 'Moscow', '', 1], [3, 'root', 'd41d8cd98f00b204e9800998ecf8427e', '', '', 1, 0, '', '+79773746080', '', '', '', 1], [4, 'cheshrst', '6ba972408907d98a70e7dbfee854f55e', '', '', 1, 0, '', '+79996739788', '', '', '', 1], [17, 'user', 'password', 'name', 'surname', 1, 0, 'email@email.ru', '+79996739788', 'country', 'city', 'address', 1], [19, 'Retr0', '109889f941630d269546335f728f3558', 'Никита', 'Админ', 1, 0, 'email@mail.ru', '89773746089', 'Россия', 'Москва', 'Перовская 56/55', 1], [20, 'player123', '4297f44b13955235245b2497399d7a93', 'Проверка', 'Создания', 1, 0, 'mailertest@mail.ru', '89773746082', 'Russia', 'Moscow', '1-й проезд д.1', 1], [21, 'player1234', '4297f44b13955235245b2497399d7a93', 'Проверка2', 'Создания2', 1, 0, 'mailertest@mail.ru', '89773746086', 'Russia', 'Saint Petersburg', '2-й проезд д.2', 1], [27, 'onixx', '$2b$12$p3NxteudTQXJWUU3NW1CPOBwnL2tRaekONdCUq5cw77Eb4Knshhea', 'oleg', 'olegovich', 1, 0, 's.olegys0801@gmail.com', '+79991234323', 'Rus', 'Moscow', 'Jopa', 1]]
+2024-04-16T20:10:00.564863+0300 INFO Getting current admin from token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9uaXh4X2FkbSIsImV4cCI6MTcxMzg5MDQzNn0.DEsI7GFj1EOWtIifCKe6xqWwJCpuWwLBN_T0Paec_1Q
+2024-04-16T20:10:00.565710+0300 INFO {'username': 'onixx_adm', 'exp': 1713890436}
+2024-04-16T20:10:00.607490+0300 DEBUG result: [[1, '3 hours', 1, 10800, 10800, '{"Client": {"available": true, "exceptions": [{"day": "1", "time_to": "23:59", "time_from": "22:00"}, {"day": "2", "time_to": "23:59", "time_from": "22:00"}]}, "Mobile": {"available": true, "exceptions": [{"day": "3", "time_to": "23:59", "time_from": "22:00"}]}, "Workspace": {"available": false, "exceptions": []}}', '{"profile": [{"price": 370, "currency_id": 1}, {"price": 370, "currency_id": 2}]}'], [3, '5 hours', 1, 18000, 18000, '{"Client": {"available": true, "exceptions": [{"day": "1", "time_to": "23:59", "time_from": "22:00"}, {"day": "2", "time_to": "23:59", "time_from": "22:00"}]}, "Mobile": {"available": true, "exceptions": [{"day": "3", "time_to": "23:59", "time_from": "22:00"}]}, "Workspace": {"available": false, "exceptions": []}}', '{"profile": [{"price": 550, "currency_id": 1}, {"price": 550, "currency_id": 2}]}']]
+2024-04-16T21:05:22.296042+0300 INFO shutting down
+2024-04-25T19:10:21.584395+0300 INFO initialized db
+2024-04-25T19:10:21.810210+0300 INFO initialized db
+2024-04-25T19:10:53.724801+0300 INFO Verifying password 1as2wd3ef against $2b$12$p3NxteudTQXJWUU3NW1CPOBwnL2tRaekONdCUq5cw77Eb4Knshhea
+2024-04-25T19:11:09.031264+0300 INFO Verifying password 1as2wd3ef against $2b$12$p3NxteudTQXJWUU3NW1CPOBwnL2tRaekONdCUq5cw77Eb4Knshhea
+2024-04-25T19:11:22.821672+0300 INFO Getting current admin from token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9uaXh4IiwiZXhwIjoxNzE0NjY2MjY5fQ.1AAy1muWSfwxbc-jULgpCI2i29Nnmz5APiTJYpHkBoc
+2024-04-25T19:11:22.827763+0300 INFO {'username': 'onixx', 'exp': 1714666269}
+2024-04-25T19:12:05.918897+0300 INFO Verifying password 1as2wd3ef against $2b$12$p3NxteudTQXJWUU3NW1CPOBwnL2tRaekONdCUq5cw77Eb4Knshhea
+2024-04-25T19:12:10.293156+0300 INFO Getting current admin from token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9uaXh4X2FkbSIsImV4cCI6MTcxNDY2NjMyNn0.V4ejBf8Ts8Z_RhwHxmjyqCR6fJTp7svmK67ypnR1OWA
+2024-04-25T19:12:10.300652+0300 INFO {'username': 'onixx_adm', 'exp': 1714666326}
+2024-04-25T19:12:10.327414+0300 DEBUG result: [[1, 'Liberty', '109889f941630d269546335f728f3558', 'Никита', '', 1, 0, 'uoker000@gmail.com', '+79773746082', 'Russia', 'Moscow', '', 2], [2, 'Xist3ns', '109889f941630d269546335f728f3558', 'Никита', '', 1, 0, 'uoker001@gmail.com', '+79773746081', 'Russia', 'Moscow', '', 1], [3, 'root', 'd41d8cd98f00b204e9800998ecf8427e', '', '', 1, 0, '', '+79773746080', '', '', '', 1], [4, 'cheshrst', '6ba972408907d98a70e7dbfee854f55e', '', '', 1, 0, '', '+79996739788', '', '', '', 1], [17, 'user', 'password', 'name', 'surname', 1, 0, 'email@email.ru', '+79996739788', 'country', 'city', 'address', 1], [19, 'Retr0', '109889f941630d269546335f728f3558', 'Никита', 'Админ', 1, 0, 'email@mail.ru', '89773746089', 'Россия', 'Москва', 'Перовская 56/55', 1], [20, 'player123', '4297f44b13955235245b2497399d7a93', 'Проверка', 'Создания', 1, 0, 'mailertest@mail.ru', '89773746082', 'Russia', 'Moscow', '1-й проезд д.1', 1], [21, 'player1234', '4297f44b13955235245b2497399d7a93', 'Проверка2', 'Создания2', 1, 0, 'mailertest@mail.ru', '89773746086', 'Russia', 'Saint Petersburg', '2-й проезд д.2', 1], [27, 'onixx', '$2b$12$p3NxteudTQXJWUU3NW1CPOBwnL2tRaekONdCUq5cw77Eb4Knshhea', 'oleg', 'olegovich', 1, 0, 's.olegys0801@gmail.com', '+79991234323', 'Rus', 'Moscow', 'Jopa', 1]]
+2024-04-25T19:14:38.654163+0300 INFO shutting down
